@@ -3,6 +3,6 @@ module com.tugalsan.api.jgit {
     requires com.tugalsan.api.union;
     requires com.tugalsan.api.list;
     requires com.tugalsan.api.url;
-    requires com.tugalsan.api.runnable;
+    requires com.tugalsan.api.callable;
     exports com.tugalsan.api.jgit.server;
 }
