@@ -1,6 +1,6 @@
 package com.tugalsan.api.jgit.server;
 
-import com.tugalsan.api.function.client.TGS_Func_In1;
+import com.tugalsan.api.function.client.maythrow.uncheckedexceptions.TGS_FuncMTUCE_In1;
 import com.tugalsan.api.list.client.TGS_ListUtils;
 import com.tugalsan.api.union.client.TGS_UnionExcuse;
 import com.tugalsan.api.union.client.TGS_UnionExcuseVoid;
@@ -17,7 +17,7 @@ import org.eclipse.jgit.lib.Ref;
 //https://www.baeldung.com/jgit
 public class TS_JGitUtils {
 
-    public static TGS_UnionExcuseVoid repoCreate(Path at, TGS_Func_In1<Git> git) {
+    public static TGS_UnionExcuseVoid repoCreate(Path at, TGS_FuncMTUCE_In1<Git> git) {
         try (var _git = Git.init().setDirectory(at.toFile()).call()) {
             git.run(_git);
             return TGS_UnionExcuseVoid.ofVoid();
@@ -26,7 +26,7 @@ public class TS_JGitUtils {
         }
     }
 
-    public static TGS_UnionExcuseVoid repoClone(TGS_Url from, Path to, TGS_Func_In1<Git> git) {
+    public static TGS_UnionExcuseVoid repoClone(TGS_Url from, Path to, TGS_FuncMTUCE_In1<Git> git) {
         try (var _git = Git.cloneRepository().setURI(from.toString()).setDirectory(to.toFile()).call()) {
             git.run(_git);
             return TGS_UnionExcuseVoid.ofVoid();
@@ -35,7 +35,7 @@ public class TS_JGitUtils {
         }
     }
 
-    public static TGS_UnionExcuseVoid repoOpen(Path at, TGS_Func_In1<Git> git) {
+    public static TGS_UnionExcuseVoid repoOpen(Path at, TGS_FuncMTUCE_In1<Git> git) {
         try (var _git = Git.open(at.toFile())) {
             git.run(_git);
             return TGS_UnionExcuseVoid.ofVoid();
